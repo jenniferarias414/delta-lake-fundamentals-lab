@@ -5,6 +5,15 @@ This project is a hands-on Databricks notebook demonstrating core Delta Lake fun
 
 It shows how Delta Lake behaves more like a database than a traditional data lake by supporting versioning, updates, deletes, and time travel.
 
+---
+
+## Tools & Technologies
+- Databricks
+- SQL
+- Delta Lake
+
+---
+
 ## Concepts Covered
 - Delta table creation
 - Insert, update, and delete operations
@@ -14,13 +23,17 @@ It shows how Delta Lake behaves more like a database than a traditional data lak
 - Schema evolution
 - Managed vs external table concepts
 
+---
+
 ## Why This Matters
 Delta Lake is a core component of modern data engineering workflows in Databricks.
 
 This project demonstrates how data engineers:
-- safely update and delete data
-- track historical changes
-- build reliable, versioned data pipelines
+- safely update and delete data  
+- track historical changes  
+- build reliable, versioned data pipelines  
+
+---
 
 ## Key Features Demonstrated
 
@@ -47,13 +60,52 @@ Modify table structure over time:
 
 ALTER TABLE demo_delta ADD COLUMNS (status STRING);
 
-## Tools Used
-- Databricks
-- SQL
-- Delta Lake
+---
+
+## Example Outputs
+
+### Delta History (Versioning)
+
+![Delta History](images/delta_history.png)
+
+This shows how each operation creates a new version of the table.
+
+---
+
+### Time Travel
+
+![Time Travel](images/time_travel.png)
+
+This demonstrates querying a previous version of the table before updates were applied.
+
+---
+
+### Final Table After Merge + Schema Evolution
+
+![Final Table](images/final_table.png)
+
+This shows:
+- updated records  
+- inserted records via MERGE  
+- new column added through schema evolution  
+
+---
 
 ## Project Structure
-- delta-lake-fundamentals-lab.py → Databricks notebook (exported)
+
+```
+notebooks/
+  delta-lake-fundamentals-lab.py
+
+images/
+  delta_history.png
+  time_travel.png
+  final_table.png
+
+README.md
+```
+
+---
 
 ## Key Takeaway
 Delta Lake is a transaction layer on top of data lakes that enables:
@@ -63,9 +115,17 @@ Delta Lake is a transaction layer on top of data lakes that enables:
 - historical tracking  
 - database-like behavior on file-based storage  
 
-## Next Steps
-Future enhancements may include:
-- Change Data Feed (CDF)
-- External table examples with S3
-- Performance optimization techniques
-- Bronze → Silver pipeline extension
+---
+
+## Future Improvements
+- Add Change Data Feed (CDF) examples  
+- Demonstrate external tables with S3  
+- Add performance optimization techniques  
+- Extend into Bronze → Silver pipeline  
+
+---
+
+## Notes
+This project is part of my Data Engineering learning journey.
+
+Focused on building consistency, hands-on experience, and GitHub-ready projects.
