@@ -107,6 +107,26 @@ README.md
 
 ---
 
+## Delta Lake Storage (Under the Hood)
+
+While working with Delta tables, I explored how data is physically stored in S3.
+
+Even when using managed tables, Databricks stores:
+
+- Data as Parquet files
+- Transaction history in the `_delta_log` folder
+
+Each operation (INSERT, UPDATE, ALTER) creates a new version recorded in `_delta_log`.
+
+![Delta Log](images/delta_log_aws.png)
+
+This enables:
+- time travel
+- version history
+- reliable updates
+
+---
+
 ## Key Takeaway
 Delta Lake is a transaction layer on top of data lakes that enables:
 
